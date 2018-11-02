@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<form th:action="@{/search}" method="post">
+    Name to search:<input type="text" name="name">
+    <input type="submit" value="Search">
+</form>
+
+<div>
+
+    <div th:each="person : ${people}">
+        <b th:text="${person.name}"></b>
+        <ul th:each="color: ${person.favoriteColors}">
+            <li th:text="${color.colorName}"></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

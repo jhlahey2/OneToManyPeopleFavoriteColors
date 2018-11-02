@@ -10,7 +10,7 @@ public class Person {
     private long personId;
     private String name;
 
-    @OneToMany(mappedBy = "person" )
+    @OneToMany(mappedBy = "person" ,cascade = CascadeType.ALL)
     private Set<Color> favoriteColors;
 
     public long getId() {
